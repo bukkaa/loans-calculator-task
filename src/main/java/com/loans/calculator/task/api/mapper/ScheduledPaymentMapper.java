@@ -1,7 +1,7 @@
-package com.sb.task.api.mapper;
+package com.loans.calculator.task.api.mapper;
 
-import com.sb.task.api.dto.ScheduledPaymentDto;
-import com.sb.task.service.model.ScheduledPayment;
+import com.loans.calculator.task.api.dto.ScheduledPaymentDto;
+import com.loans.calculator.task.service.model.ScheduledPayment;
 import org.mapstruct.Mapper;
 
 import java.util.List;

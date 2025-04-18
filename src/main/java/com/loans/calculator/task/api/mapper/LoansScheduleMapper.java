@@ -1,7 +1,7 @@
-package com.sb.task.api.mapper;
+package com.loans.calculator.task.api.mapper;
 
-import com.sb.task.api.dto.LoansScheduleDto;
-import com.sb.task.service.model.LoansSchedule;
+import com.loans.calculator.task.api.dto.LoansScheduleDto;
+import com.loans.calculator.task.service.model.LoansSchedule;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring", uses = ScheduledPaymentMapper.class)

@@ -1,4 +1,4 @@
-package com.sb.task.service.model;
+package com.loans.calculator.task.service.model;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;

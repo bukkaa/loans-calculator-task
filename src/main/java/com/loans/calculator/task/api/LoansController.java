@@ -1,9 +1,9 @@
-package com.sb.task.api;
+package com.loans.calculator.task.api;
 
-import com.sb.task.api.dto.LoansScheduleDto;
-import com.sb.task.api.mapper.LoansScheduleMapper;
-import com.sb.task.service.LoansCalculationService;
-import com.sb.task.service.model.LoansSchedule;
+import com.loans.calculator.task.api.dto.LoansScheduleDto;
+import com.loans.calculator.task.api.mapper.LoansScheduleMapper;
+import com.loans.calculator.task.service.LoansCalculationService;
+import com.loans.calculator.task.service.model.LoansSchedule;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import jakarta.validation.Valid;
@@ -33,11 +33,11 @@ public class LoansController {
     public LoansScheduleDto calculateLoanSchedule(
             @Parameter(required = true, description = "Amount of loan")
             @RequestParam @Valid @NotNull @Positive(message = "Amount should be a positive decimal number") BigDecimal amount,
-            @Parameter(required = true, description = "Interest annual rate")
+            @Parameter(required = true, description = "Interest annual rate in %. For example, 6%")
             @RequestParam @Valid @PositiveOrZero(message = "Interest rate should be a positive float or zero") float interestRate,
             @Parameter(required = true, description = "Loan term in months")
             @RequestParam @Valid @Positive(message = "Term should me a positive integer") int term) {
-        LoansSchedule schedule = loansCalculationService.calculateAnnualSchedule(amount, interestRate, term);
-        return mapper.toDto(schedule);
+
+        return mapper.toDto(loansCalculationService.calculateAnnualSchedule(new LoansSchedule(amount, interestRate, term)));
     }
 }

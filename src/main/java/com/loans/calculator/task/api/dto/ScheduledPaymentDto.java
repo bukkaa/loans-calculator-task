@@ -1,4 +1,4 @@
-package com.sb.task.api.dto;
+package com.loans.calculator.task.api.dto;
 
 import java.math.BigDecimal;
 
